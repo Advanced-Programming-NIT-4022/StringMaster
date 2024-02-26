@@ -7,8 +7,8 @@ public class StringTest {
     Advanced advanced = new Advanced();
     @Test
     public void wordFinder_test(){
-        assertEquals("Tem", warmup.wordFinder("Happy New Term", 1));
-        assertEquals(" Number = 4 is out Of Bound", warmup.wordFinder("Hello From Java", 4));
+        assertEquals("Term", warmup.wordFinder("Happy New Term", 3));
+        assertEquals("Number = 4 is out Of Bound", warmup.wordFinder("Hello From Java", 4));
     }
     @Test
     public void oddEvenCounter_test(){
