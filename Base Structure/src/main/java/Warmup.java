@@ -22,7 +22,17 @@ public class Warmup {
      * @return if searchForEven is true ? return the number of even numbers : return the number of odd numbers
      */
     public int oddEvenCounter(String number, boolean searchForEven) {
-        return -1;
+        String[] num = number.split("");
+        int count = 0;
+        for (String i : num) {
+            int num1 = Integer.parseInt(i);
+            if (searchForEven && num1 % 2 == 0) {
+                count++;
+            } else if (!searchForEven && num1 % 2 != 0) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
