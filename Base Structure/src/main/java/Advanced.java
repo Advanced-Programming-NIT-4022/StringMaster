@@ -10,6 +10,7 @@ public class Advanced {
 
      */
     public String wordCensor(String sentence, String word, String newWord){
+
         return null;
     }
 
