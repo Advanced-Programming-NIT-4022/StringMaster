@@ -32,8 +32,14 @@ public class Advanced {
      * @param lastName is a last name with irregular letters (example : pOtTeR)
      * @return fullName is a normal full name that just the first letter of firstName & lastName is Capitalized (example : Harry Potter)
      */
-    public String normalizingName(String firstName, String lastName){
-        return null;
+    public String normalizingName(String firstName, String lastName) {
+        firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1).toLowerCase();
+        lastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1).toLowerCase();
+        if (lastName.isBlank())
+            return firstName;
+        else if (firstName.isBlank())
+            return lastName;
+        return firstName + " " + lastName;
     }
 
     /**
