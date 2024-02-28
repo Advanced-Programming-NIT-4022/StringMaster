@@ -9,8 +9,21 @@ public class Advanced {
      * You have to search the sentence to find the word that you were given as input and change it with the newWord
 
      */
-    public String wordCensor(String sentence, String word, String newWord){
-        return null;
+    public String wordCensor(String sentence, String word, String newWord) {
+        int index = sentence.indexOf(word);
+        while (index >= 0) {
+            char[] sentenceChars = new char[sentence.length() - word.length() + newWord.length()];
+            int i, j;
+            for (i = 0; i < index; i++)
+                sentenceChars[i] = sentence.charAt(i);
+            for (j = 0; j < newWord.length(); j++, i++)
+                sentenceChars[i] = newWord.charAt(j);
+            for (j = i - j + word.length(); i < sentenceChars.length; i++, j++)
+                sentenceChars[i] = sentence.charAt(j);
+            sentence = new String(sentenceChars);
+            index = sentence.indexOf(word, index - word.length() + newWord.length() + 1);
+        }
+        return sentence;
     }
 
     /**
