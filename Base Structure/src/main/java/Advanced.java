@@ -10,8 +10,22 @@ public class Advanced {
 
      */
     public String wordCensor(String sentence, String word, String newWord){
+        StringBuilder sb = new StringBuilder();
+        String[] words = sentence.split(" ");
 
-        return null;
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].equals(word)) {
+                sb.append(newWord);
+            } else {
+                sb.append(words[i]);
+            }
+
+            if (i < words.length - 1) {
+                sb.append(" ");
+            }
+        }
+
+        return sb.toString();
     }
 
     /**
