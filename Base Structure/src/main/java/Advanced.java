@@ -50,7 +50,22 @@ public class Advanced {
      * @return if word contains Consecutive repeated letters, one of the repeated letters should be omitted
      */
     public String doubleChar(String word) {
-        return null;
+        if (word == null || word.isEmpty()) {
+            return word;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        char prevChar = '\0';
+
+        for (char currentChar : word.toCharArray()) {
+            if (currentChar != prevChar) {
+                sb.append(currentChar);
+                prevChar = currentChar;
+            }
+        }
+
+        return sb.toString();
     }
+
 }
 
