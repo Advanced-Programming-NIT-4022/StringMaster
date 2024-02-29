@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Advanced {
 
     /**
@@ -43,15 +41,15 @@ public class Advanced {
         if (word.isEmpty()) return "";
         char[] newWord = new char[word.length()];
         newWord[0] = word.charAt(0);
-        int lenght = 1;
+        int length = 1;
         char[] wordChars = word.toCharArray();
         for (int i = 1; i < wordChars.length; i++) {
-            if (wordChars[i] != newWord[lenght - 1]) {
-                newWord[lenght] = wordChars[i];
-                lenght++;
+            if (wordChars[i] != newWord[length - 1]) {
+                newWord[length] = wordChars[i];
+                length++;
             }
         }
-        return String.valueOf(newWord, 0, lenght);
+        return String.valueOf(newWord, 0, length);
     }
 }
 
