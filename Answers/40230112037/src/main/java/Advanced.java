@@ -48,7 +48,18 @@ public class Advanced {
      * @return if word contains Consecutive repeated letters, one of the repeated letters should be omitted
      */
     public String doubleChar(String word) {
-        return null;
+        if (word.isEmpty()) return "";
+        char[] newWord = new char[word.length()];
+        newWord[0] = word.charAt(0);
+        int lenght = 1;
+        char[] wordChars = word.toCharArray();
+        for (int i = 1; i < wordChars.length; i++) {
+            if (wordChars[i] != newWord[lenght - 1]) {
+                newWord[lenght] = wordChars[i];
+                lenght++;
+            }
+        }
+        return String.valueOf(newWord, 0, lenght);
     }
 }
 
