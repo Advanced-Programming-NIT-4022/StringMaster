@@ -12,15 +12,7 @@ public class Advanced {
     public String wordCensor(String sentence, String word, String newWord) {
         int index = sentence.indexOf(word);
         while (index >= 0) {
-            char[] sentenceChars = new char[sentence.length() - word.length() + newWord.length()];
-            int i, j;
-            for (i = 0; i < index; i++)
-                sentenceChars[i] = sentence.charAt(i);
-            for (j = 0; j < newWord.length(); j++, i++)
-                sentenceChars[i] = newWord.charAt(j);
-            for (j = i - j + word.length(); i < sentenceChars.length; i++, j++)
-                sentenceChars[i] = sentence.charAt(j);
-            sentence = new String(sentenceChars);
+            sentence = String.valueOf(sentence.toCharArray(), 0, index) + newWord + String.valueOf(sentence.toCharArray(), index + word.length(), sentence.length() - index - word.length());
             index = sentence.indexOf(word, index - word.length() + newWord.length() + 1);
         }
         return sentence;
