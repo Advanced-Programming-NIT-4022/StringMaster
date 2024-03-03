@@ -21,7 +21,22 @@ public class Warmup {
      * @return if searchForEven is true ? return the number of even numbers : return the number of odd numbers
      */
     public int oddEvenCounter(String number, boolean searchForEven) {
-        return -1;
+        char[] num = number.toCharArray();
+        int countOdd = 0, countEven = 0;
+        if (!searchForEven) {
+            for (int i = 0; i < number.length(); i++) {
+                if (num[i] == '1' || num[i] == '3' || num[i] == '5' || num[i] == '7' || num[i] == '9')
+                    countOdd++;
+            }
+            return countOdd;
+        }
+        else {
+            for (int i = 0; i < number.length(); i++) {
+                if (num[i] == '0' || num[i] == '2' || num[i] == '4' || num[i] == '6' || num[i] == '8')
+                    countEven++;
+            }
+            return countEven;
+        }
     }
 
     /**
