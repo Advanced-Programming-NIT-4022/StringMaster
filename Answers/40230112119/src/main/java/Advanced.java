@@ -32,7 +32,23 @@ public class Advanced {
      * @return fullName is a normal full name that just the first letter of firstName & lastName is Capitalized (example : Harry Potter)
      */
     public String normalizingName(String firstName, String lastName){
-        return null;
+        char[] letterf = firstName.toCharArray();
+        char[] letterl = lastName.toCharArray();
+        letterf[0] = Character.toUpperCase(letterf[0]);
+        letterl[0] = Character.toUpperCase(letterl[0]);
+        for (int i = 1; i < letterf.length; i++) {
+            letterf[i] = Character.toLowerCase(letterf[i]);
+        }
+        for (int i = 1; i < letterl.length; i++) {
+            letterl[i] = Character.toLowerCase(letterl[i]);
+        }
+        if (lastName.equals(" ")) {
+            return String.valueOf(letterf);
+        }
+        else {
+            String result = String.valueOf(letterf) + " " + String.valueOf(letterl);
+            return result;
+        }
     }
 
     /**
