@@ -10,7 +10,19 @@ public class Advanced {
 
      */
     public String wordCensor(String sentence, String word, String newWord){
-        return null;
+        String[] sep = sentence.split(" ");
+        for (int i = 0; i < sep.length; i++) {
+            if (sep[i].equals(word)) {
+                sep[i] = newWord;
+            }
+        }
+        String result = String.valueOf(sep[0]);
+        for (int i = 1; i < sep.length; i++) {
+            result += " " + sep[i];
+        }
+
+        return result;
+
     }
 
     /**
